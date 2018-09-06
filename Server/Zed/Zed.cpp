@@ -401,7 +401,10 @@ namespace Core
 		}
 
 		if (sideBySide) {
-			cv::hconcat(result_left_ocv, result_right_ocv, result_sbs_ocv);
+			cv::hconcat(result_left_ocv, result_right_ocv, result_sbs_ocv);	
+
+			//int step = result_sbs_ocv.step;
+			//int step1 = result_sbs_ocv.step1();
 		}
 
 

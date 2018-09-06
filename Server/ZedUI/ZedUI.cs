@@ -83,7 +83,9 @@ namespace ZedTester
             //BitmapData bmd = bm.LockBits(new Rectangle(0, 0, bm.Width, bm.Height), ImageLockMode.ReadOnly, bm.PixelFormat);
             //var stride = bmd.Stride;
 
-            this.stride = (Properties.Settings.Default.Camera == 0 ? 4 : 3) * ((ResolutionH * 32 + 31) / 32); // ResolutionH * 4;
+            this.stride = Properties.Settings.Default.Camera == 0
+                ? (4 * ((ResolutionH * 32 + 31) / 32))  // ZED Stride is 4 channel image
+                : 3840; //(3 * ((ResolutionH * 32 + 31) / 32)); // Webcamera Stride for 3 channel image
         }
 
 
@@ -202,7 +204,7 @@ namespace ZedTester
                 }
                 else
                 {
-                    //this.server.ReplaceImages(GetBytes(finalLeft), GetBytes(finalRight));
+                    this.server.ReplaceImages(GetBytes(finalLeft), GetBytes(finalRight));
                 }
 
 
