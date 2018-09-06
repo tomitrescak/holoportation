@@ -1,0 +1,46 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Library/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.unityproj
+*.booproj
+*.zip
+
+# =============================== #
+# JetBrains Rider Generated Files #
+# =============================== #
+.idea/
+
+Assets/Fonts/V.GER/_MACOSX.meta
+Assets/Fonts/Stellar/_MACOSX/Stellar-FreeForPersonalUse.meta
+Assets/InstallPlaymaker.meta
+Assets/Fonts/Stellar/_MACOSX.meta
+
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Builds
+.vs/
+/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll

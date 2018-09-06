@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FrameProcessor.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Zed.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FrameProcessor.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Zed.hpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D3C0A3E3-54C5-447C-A6A6-407C5C8F57B0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Zed</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ZED_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\samples\interfaces\openCV\include;C:\Libraries\opencv\build\include;C:\Libraries\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:/Program Files (x86)/ZED SDK/lib;C:/Program Files (x86)/ZED SDK/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Program Files (x86)\ZED SDK\lib\sl_zed64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_input64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_core64.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cuda.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppial.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicom.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppidei.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppif.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppig.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppim.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppist.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppisu.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppitc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\npps.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;ZED_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\samples\interfaces\openCV\include;C:\Libraries\opencv\build\include;C:\Libraries\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:/Program Files (x86)/ZED SDK/lib;C:/Program Files (x86)/ZED SDK/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Program Files (x86)\ZED SDK\lib\sl_zed64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_input64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_core64.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cuda.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppial.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicom.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppidei.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppif.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppig.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppim.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppist.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppisu.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppitc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\npps.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ZED_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\samples\interfaces\openCV\include;C:\Libraries\opencv\build\include;C:\Libraries\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Program Files (x86)\ZED SDK\lib\sl_zed64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_input64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_core64.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340d.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cuda.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppial.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicom.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppidei.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppif.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppig.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppim.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppist.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppisu.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppitc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\npps.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files (x86)/ZED SDK/lib;C:/Program Files (x86)/ZED SDK/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;ZED_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\samples\interfaces\openCV\include;C:\Libraries\opencv\build\include;C:\Libraries\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Program Files (x86)\ZED SDK\lib\sl_zed64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_input64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_core64.lib;C:\Libraries\opencv\build\x64\vc15\lib\opencv_world340.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cuda.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppial.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppicom.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppidei.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppif.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppig.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppim.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppist.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppisu.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\nppitc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64\npps.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files (x86)/ZED SDK/lib;C:/Program Files (x86)/ZED SDK/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
