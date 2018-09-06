@@ -23,8 +23,6 @@ namespace ZedTester
 
         int[][] Resolutions = { new[] { 2560, 1440 }, new[] { 1920, 1080 }, new[] { 1280, 720 }, new [] { 672, 376 } };
 
-        
-
         int ResolutionH => Resolutions[Properties.Settings.Default.Resolution][0] / (Properties.Settings.Default.SideBySide ? 1 : 2);
         int ResolutionV => Resolutions[Properties.Settings.Default.Resolution][1] / 2;
 
@@ -85,7 +83,7 @@ namespace ZedTester
 
             this.stride = Properties.Settings.Default.Camera == 0
                 ? (4 * ((ResolutionH * 32 + 31) / 32))  // ZED Stride is 4 channel image
-                : 3840; //(3 * ((ResolutionH * 32 + 31) / 32)); // Webcamera Stride for 3 channel image
+                : (4 * ((ResolutionH * 32 + 31) / 32)); // Webcamera Stride for 3 channel image
         }
 
 

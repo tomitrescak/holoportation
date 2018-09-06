@@ -403,6 +403,10 @@ namespace Core
 		if (sideBySide) {
 			cv::hconcat(result_left_ocv, result_right_ocv, result_sbs_ocv);	
 
+			if (camera == 1) {
+				cv::cvtColor(result_sbs_ocv, result_sbs_ocv, CV_BGR2BGRA);
+			}
+
 			//int step = result_sbs_ocv.step;
 			//int step1 = result_sbs_ocv.step1();
 		}
